@@ -22,8 +22,9 @@ $(function() {
                 } else {
                     msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "success", "glyphicon-ok", "Login OK");
                 }*/
+            	
 				 $.ajax({
-				url:'user_auth/user_login_process',
+				url:baseUrl+'user_auth/user_login_process',
 				type: 'POST',
 				data:  $('#login-form').serialize(),
 				success: function(msg) {
@@ -32,7 +33,7 @@ $(function() {
 						setTimeout(
 							function() 
 								{
-									window.location.href = "";
+									window.location.href = "kathullu";
 						}, 3000);
 						}
 					else if ($.trim(msg) == "NO"){
@@ -46,18 +47,40 @@ $(function() {
 				 error: function(xhr, textStatus, error){
 				      console.log(xhr.statusText);
 				      console.log(textStatus);
+				      console.log(xhr.responseText);
 				      console.log(error);
 				  }
 				});
 				return false;
                 break;
             case "lost-form":
-                var $ls_email=$('#lost_email').val();
+               /* var $ls_email=$('#lost_email').val();
                 if ($ls_email == "ERROR") {
                     msgChange($('#div-lost-msg'), $('#icon-lost-msg'), $('#text-lost-msg'), "error", "glyphicon-remove", "Send error");
                 } else {
                     msgChange($('#div-lost-msg'), $('#icon-lost-msg'), $('#text-lost-msg'), "success", "glyphicon-ok", "Send OK");
-                }
+                }*/
+            	$.ajax({
+    				url:baseUrl+'user_auth/lost_email',
+    				type: 'POST',
+    				data:  $('#lost_email').serialize(),
+    				success: function(msg) {
+    					if ($.trim(msg) == "failure")
+    						msgChange($('#div-register-msg'), $('#icon-register-msg'), $('#text-register-msg'), "error", "glyphicon-remove", "Register error");
+    					else if ($.trim(msg) == "success")
+    						msgChange($('#div-register-msg'), $('#icon-register-msg'), $('#text-register-msg'), "success", "glyphicon-ok", "Register OK");
+    					else{
+    						msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "error", "glyphicon-remove", "unknown error");
+    					}
+    					//alert("hello"+msg);
+    				},
+    				error: function(xhr, textStatus, error){
+				      console.log(xhr.statusText);
+				      console.log(xhr.responseText);
+				      console.log(textStatus);
+				      console.log(error);
+				  }
+    				});
                 return false;
                 break;
             case "register-form":
@@ -70,7 +93,7 @@ $(function() {
                     msgChange($('#div-register-msg'), $('#icon-register-msg'), $('#text-register-msg'), "success", "glyphicon-ok", "Register OK");
                 }*/
                 $.ajax({
-    				url:'user_auth/register_user',
+    				url:baseUrl+'user_auth/register_user',
     				type: 'POST',
     				data:  $('#register-form').serialize(),
     				success: function(msg) {
@@ -85,7 +108,7 @@ $(function() {
     				},
     				error: function(xhr, textStatus, error){
 				      console.log(xhr.statusText);
-				      console.log(xhr.responseText)
+				      console.log(xhr.responseText);
 				      console.log(textStatus);
 				      console.log(error);
 				  }

@@ -98,22 +98,6 @@ function onFileSelected(event) {
 
 jQuery(document).ready(function($){
 
-	    var desktopView = $(document).width();
-	    if(desktopView >= "768"){
-	        $(".nav a").removeClass("collapser");
-	    }
-	    else{
-	        $(".nav li").removeClass("caterpian");
-	    }
-		//navbar
-		$(".nav a").on("click", function(){
-			$(".nav").find(".active").removeClass("active");
-			$(this).parent().addClass("active");
-			});	
-		$(".collapser").on("click", function(){
-			$(".navbar-collapse").collapse('hide');
-		});
+    $('#login-modal').modal();
 	    $('.img-picker').imagePicker({name: "images"});
-
-	    $('[data-toggle="popover"]').popover(); 
 });

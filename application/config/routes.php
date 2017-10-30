@@ -51,6 +51,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['layerlist']='WallpaperController/getLayers';
 $route['list'] = 'WallpaperController';
+$route['downloadcount']='WallpaperController/updateDownloadCount';
+$route['likecount']='WallpaperController/updateLikeCount';
+$route['kathullu']='WallpaperController/addWallpaperserversystem';
+$route['loghack'] = 'user_auth/loginmodal';
+$route['logout'] = 'user_auth/logout';
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

@@ -23,7 +23,6 @@ if(!function_exists('generateBreadcrumb')){
 			$i++;
 			$uri = $ci->uri->segment($i);
 		}
-		$link.='<li><a href="'.base_url("").'logout">logout</a>';
 		$link .= '</ol>';
 		return $link;
 	}

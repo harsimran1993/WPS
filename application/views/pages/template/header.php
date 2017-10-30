@@ -21,8 +21,8 @@
 	
 		<!-- main CSS -->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/custom.css"); ?>" />
-		<script type="text/javascript">
-			var baseUrl= '<?php echo base_url("");?>';
-		</script>
+		
+		<!-- angular -->
+		<script type="text/javascript" src="<?php echo base_url("assets/JS/angular.min.js"); ?>"></script>
 		</head>
 	<body>

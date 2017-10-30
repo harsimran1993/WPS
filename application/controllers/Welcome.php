@@ -10,6 +10,8 @@ class Welcome extends CI_Controller {
 	
 	public function index()
 	{
-		
+		$data['heading']="ERROR 404";
+		$data['message']="You are attempting to access an unknown page.";
+		$this->load->view('errors/html/error_404',$data);
 	}
 }
