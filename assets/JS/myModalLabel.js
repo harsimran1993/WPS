@@ -24,7 +24,7 @@ $(function() {
                 }*/
             	
 				 $.ajax({
-				url:baseUrl+'user_auth/user_login_process',
+				url:'user_auth/user_login_process',
 				type: 'POST',
 				data:  $('#login-form').serialize(),
 				success: function(msg) {

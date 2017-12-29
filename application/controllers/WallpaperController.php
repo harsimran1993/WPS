@@ -22,7 +22,7 @@ class WallpaperController extends CI_Controller {
 			$data[$i]=array();
 			$data[$i]['ID'] = $wall['ID'];
 			$data[$i]['Title'] = $wall['Title'];
-			$data[$i]['ThumbUrl'] = base_url("")."assets/img/thumbs/".$wall['ThumbUrl'].".jpg";
+			$data[$i]['ThumbUrl'] = base_url("")."assets/img/".$wall['ThumbUrl'];
 			$data[$i]['LikeCount'] = $wall['LikeCount'];
 			$data[$i]['AddedBy'] = $wall['AddedBy'];
 			$data[$i]['DirectoryName'] = $wall['DirectoryName'];
@@ -45,9 +45,9 @@ class WallpaperController extends CI_Controller {
 		$i=0;
 		foreach ($layer_list as $llist){
 			$data[$i]=array();
-			//$data[$i]['LayerName']=$llist['LayerUrl'];
+			$data[$i]['LayerName']=$llist['LayerUrl'];
 			$data[$i]['LayerOrder']=$llist['LayerOrder'];
-			$data[$i]['LayerUrl']= base_url("")."assets/img/layers/".$llist['LayerUrl'];
+			$data[$i]['LayerUrl']= base_url("")."assets/img/".$llist['LayerUrl'];
 			$i++;
 		}
 		$layerdata['Layers'] = $data;
